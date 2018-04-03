@@ -62,6 +62,219 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-组件定义和使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/03/组件定义和使用/" class="article-date">
+  <time datetime="2018-04-03T11:36:15.000Z" itemprop="datePublished">2018-04-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/03/组件定义和使用/">组件定义和使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Vue-的两个核心"><a href="#Vue-的两个核心" class="headerlink" title="Vue 的两个核心"></a>Vue 的两个核心</h2><pre><code>1. MVVM 数据驱动视图---不操作DOM
+2. 组件化
+</code></pre><hr>
+<ul>
+<li>定义组件的方式（2种）<ol>
+<li>全局组件定义在全局，在任意组件中都可以直接使用</li>
+<li>局部组件定义在组件内部，只能在当前组件使用</li>
+<li>建议把通用的组件定义在全局，把非通用的业务组件定义在局部</li>
+</ol>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>组件的组成</p>
+<ul>
+<li>第一个参数： 组件的名称</li>
+<li>第二个参数： 选项对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&quot;app-header&quot;, &#123;</span><br><span class="line">    template: &apos;&lt;h1&gt;我是 Header&lt;/h1&gt;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>注册组件</p>
+<ul>
+<li>你不必把每个组件都注册到全局。 你可以通过某个 Vue 实例/组件的实例选项 components 注册仅在其作用域中可用的组件</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>组件调用  </p>
+<ul>
+<li>组件最后要在视图中使用，所以我们需要在视图中调用</li>
+<li>如何调用： 将组件名作为标签使用<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">app-header</span>&gt;</span><span class="tag">&lt;/<span class="name">app-header</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>组件就是一个特殊的 Vue 实例</p>
+<ul>
+<li>template 组件的模板</li>
+<li>data</li>
+<li>methods</li>
+<li>computed</li>
+<li>directives</li>
+<li>…</li>
+</ul>
+</li>
+<li><p>组件使用注意事项</p>
+<ul>
+<li>不需要 el ，组件的 template 就是组件管理的模板</li>
+<li>组件的 template 只能有一个根节点</li>
+<li>组件的 data 必须是函数</li>
+<li>组件是私有作用域<ul>
+<li>内部无法访问外部</li>
+<li>外部也无法访问内部</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>组件的模板</p>
+<ul>
+<li>DOM 模板</li>
+<li>字符串模板</li>
+<li>.vue 单文件组件中的 template 模板</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="通过-Element-感受组件的威力"><a href="#通过-Element-感受组件的威力" class="headerlink" title="通过 Element 感受组件的威力"></a>通过 Element 感受组件的威力</h2><ul>
+<li>Element 是国内饿了吗前端团队基于 Vue 开发的一个知名的第三方组件库，它能帮助我们更加快速的构建 Web 应用。</li>
+<li>官网：element.eleme.io</li>
+</ul>
+<p>安装：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i element-ui</span><br></pre></td></tr></table></figure></p>
+<p>Hello World:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 引入样式 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://unpkg.com/element-ui/lib/theme-chalk/index.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-button</span> @<span class="attr">click</span>=<span class="string">"visible = true"</span>&gt;</span>按钮<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-dialog</span> <span class="attr">:visible.sync</span>=<span class="string">"visible"</span> <span class="attr">title</span>=<span class="string">"Hello world"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>欢迎使用 Element<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-dialog</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 先引入 Vue --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/vue/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 引入组件库 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/element-ui/lib/index.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    new Vue(&#123;</span></span><br><span class="line"><span class="undefined">      el: '#app',</span></span><br><span class="line"><span class="undefined">      data: function() &#123;</span></span><br><span class="line"><span class="undefined">        return &#123; visible: false &#125;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    &#125;)</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="一个合理的组件化构建的-Vue-如下："><a href="#一个合理的组件化构建的-Vue-如下：" class="headerlink" title="一个合理的组件化构建的 Vue 如下："></a>一个合理的组件化构建的 Vue 如下：</h2><ol>
+<li>一个应用仅有一个根 Vue 实例<ul>
+<li>根实例的作用就是启动 Vue 程序，把根组件挂载到 HTML 节点入口</li>
+<li>挂载路由</li>
+<li>…</li>
+</ul>
+</li>
+<li>一个应用仅有一个根组件</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/03/组件定义和使用/" data-id="cjfjps9yr0003p8rqwd1i69mw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Todos-vue" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/02/Todos-vue/" class="article-date">
+  <time datetime="2018-04-02T13:34:36.000Z" itemprop="datePublished">2018-04-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/02/Todos-vue/">Todos_vue</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Todos-Demo-Vue"><a href="#Todos-Demo-Vue" class="headerlink" title="Todos Demo Vue"></a>Todos Demo Vue</h1><h2 id="添加任务项"><a href="#添加任务项" class="headerlink" title="添加任务项"></a>添加任务项</h2><ul>
+<li><p>获取input输入框中的内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 1 双向绑定获取：</span><br><span class="line">v-model=&quot;inputText&quot;</span><br><span class="line"></span><br><span class="line">// 2 事件源对象获取：</span><br><span class="line">let value = e.target.value</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判断非空：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if(!value)&#123;</span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>id唯一(最后一项的id+1)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const lastItem = todos[todos.length - 1];</span><br><span class="line">const id = lastItem ? lastItem.id + 1 : 1;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>任务项为空时隐藏section&amp;footer</p>
+<ul>
+<li>template标签： 渲染结果，不包含标签–层级</li>
+</ul>
+</li>
+</ul>
+<h2 id="删除任务项"><a href="#删除任务项" class="headerlink" title="删除任务项"></a>删除任务项</h2><ul>
+<li>点击处理函数传入参数id，根据id删除当前任务项<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.todos.splice(index, 1);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="编辑任务项"><a href="#编辑任务项" class="headerlink" title="编辑任务项"></a>编辑任务项</h2><ul>
+<li><p>双击任务项，显示为编辑状态</p>
+<ul>
+<li>需要用第三方变量<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.currentEdit = item;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>编辑状态时显示当前的内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 考虑到按ESC按钮取消编辑，所以这里的内容不用双绑</span><br><span class="line">v-bind:value=&quot;item.title&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>保存编辑时，判断非空，将新的内容赋值给当前项，清空编辑样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 保存编辑</span><br><span class="line">saveEdit (item,index,e)&#123;</span><br><span class="line">    const value = e.target.value;</span><br><span class="line">    // 如果内容为空，则直接删除</span><br><span class="line">    if(!value)&#123;</span><br><span class="line">        this.todos.splice(index, 1);</span><br><span class="line">    &#125;</span><br><span class="line">    item.title = value;</span><br><span class="line">    this.currentEdit = null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="显示剩余任务数"><a href="#显示剩余任务数" class="headerlink" title="显示剩余任务数"></a>显示剩余任务数</h2><ul>
+<li><ol>
+<li>直接在模板中写内置 javascript 表达式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 模板逻辑太重，不好维护</span><br><span class="line">&lt;span class=&quot;todo-count&quot;&gt;&lt;strong&gt;&#123;&#123; todos.filter(item =&gt; !item.done).length &#125;&#125;&lt;/strong&gt; item left&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>把逻辑封装到方法中，然后在绑定的时候调用渲染<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 调用下面的方法即可获取到未完成的任务数</span><br><span class="line">// 缺点：没有缓存，每使用一次就需要调用一次</span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"todo-count"</span>&gt;</span><span class="tag">&lt;<span class="name">strong</span>&gt;</span>&#123;&#123; getRemaining() &#125;&#125;<span class="tag">&lt;/<span class="name">strong</span>&gt;</span> item left<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">getRemaining ()&#123;</span><br><span class="line">    return todos.filter(item =&gt; !item.done).length</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><ol start="3">
+<li>计算属性选择对象<ul>
+<li>计算属性的本质是方法，但是只能当属性来使用 <strong>不能代用</strong></li>
+<li>所谓的计算属性就是带有行为的属性</li>
+<li>凡是可以绑定 data 属性的地方，都可以绑定使用 计算属性</li>
+<li>计算属性从使用角度讲是有值的，从本质来讲它的值来自于自己的 get 方法的返回值</li>
+<li>计算属性会把计算结果进行缓存，使用多次只会调用一次<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// 优点：计算属性会把计算结果进行缓存，使用多次只会调用一次，效率高</span><br><span class="line">// getRemaining属性不存储值，它的值始终由 get 方法</span><br><span class="line">// 计算属性绝大多数情况下只需要 get 就够了</span><br><span class="line">computed: &#123;</span><br><span class="line">    getRemaining: &#123;</span><br><span class="line">        get ()&#123;</span><br><span class="line">            return this.todos.filter(item =&gt; !item.done).length;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//简写：</span><br><span class="line">computed: &#123;</span><br><span class="line">    getRemaining ()&#123;</span><br><span class="line">        return this.todos.filter(item =&gt; !item.done).length;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/02/Todos-vue/" data-id="cjfjps9zo0004p8rq3upz47uk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-匿名自执行函数以及传递依赖项的问题" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/04/02/匿名自执行函数以及传递依赖项的问题/" class="article-date">
@@ -106,7 +319,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/02/匿名自执行函数以及传递依赖项的问题/" data-id="cjfi9zl4r00027crqh68biy1p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/02/匿名自执行函数以及传递依赖项的问题/" data-id="cjfjps9yi0001p8rq1ctav07h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -224,7 +437,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/29/个人博客搭建/" data-id="cjfi9zl4l00017crqhlzq01zg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/29/个人博客搭建/" data-id="cjfjps9yo0002p8rqqy24j0u0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -269,7 +482,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/29/hello-world/" data-id="cjfi9zl4600007crqoait8y14" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/29/hello-world/" data-id="cjfjps9y60000p8rqfosuwt4w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -308,6 +521,14 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/04/03/组件定义和使用/">组件定义和使用</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/02/Todos-vue/">Todos_vue</a>
+          </li>
         
           <li>
             <a href="/2018/04/02/匿名自执行函数以及传递依赖项的问题/">123.md</a>
