@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Todos Demo Vue添加任务项 获取input输入框中的内容 12345// 1 双向绑定获取：v-model=&amp;quot;inputText&amp;quot;// 2 事件源对象获取：let value = e.target.value  判断非空： 123if(!value)&amp;#123;    return;&amp;#125;  id唯一(最后一项的id+1) 12const lastItem =">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-03T06:01:54.157Z">
+<meta property="og:updated_time" content="2018-04-03T15:51:09.818Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Todos_vue">
 <meta name="twitter:description" content="Todos Demo Vue添加任务项 获取input输入框中的内容 12345// 1 双向绑定获取：v-model=&amp;quot;inputText&amp;quot;// 2 事件源对象获取：let value = e.target.value  判断非空： 123if(!value)&amp;#123;    return;&amp;#125;  id唯一(最后一项的id+1) 12const lastItem =">
@@ -93,7 +93,7 @@
 <li><p>判断非空：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if(!value)&#123;</span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>id唯一(最后一项的id+1)</p>
+<li><p>id唯一(最后一项的<code>id</code>+1)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const lastItem = todos[todos.length - 1];</span><br><span class="line">const id = lastItem ? lastItem.id + 1 : 1;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>任务项为空时隐藏section&amp;footer</p>
@@ -102,10 +102,12 @@
 </ul>
 </li>
 </ul>
+<hr>
 <h2 id="删除任务项"><a href="#删除任务项" class="headerlink" title="删除任务项"></a>删除任务项</h2><ul>
 <li>点击处理函数传入参数id，根据id删除当前任务项<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.todos.splice(index, 1);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<hr>
 <h2 id="编辑任务项"><a href="#编辑任务项" class="headerlink" title="编辑任务项"></a>编辑任务项</h2><ul>
 <li><p>双击任务项，显示为编辑状态</p>
 <ul>
@@ -120,6 +122,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 保存编辑</span><br><span class="line">saveEdit (item,index,e)&#123;</span><br><span class="line">    const value = e.target.value;</span><br><span class="line">    // 如果内容为空，则直接删除</span><br><span class="line">    if(!value)&#123;</span><br><span class="line">        this.todos.splice(index, 1);</span><br><span class="line">    &#125;</span><br><span class="line">    item.title = value;</span><br><span class="line">    this.currentEdit = null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<hr>
 <h2 id="显示剩余任务数"><a href="#显示剩余任务数" class="headerlink" title="显示剩余任务数"></a>显示剩余任务数</h2><ul>
 <li><ol>
 <li>直接在模板中写内置 javascript 表达式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 模板逻辑太重，不好维护</span><br><span class="line">&lt;span class=&quot;todo-count&quot;&gt;&lt;strong&gt;&#123;&#123; todos.filter(item =&gt; !item.done).length &#125;&#125;&lt;/strong&gt; item left&lt;/span&gt;</span><br></pre></td></tr></table></figure>
@@ -147,11 +150,29 @@
 </ol>
 </li>
 </ul>
+<hr>
+<h2 id="清除所有已完成任务项"><a href="#清除所有已完成任务项" class="headerlink" title="清除所有已完成任务项"></a>清除所有已完成任务项</h2><ul>
+<li>for循环遍历的时候会发生跳项问题，解决方法：<code>i--</code>，让索引 i 倒退一次，防止漏网之鱼<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">clearAllDone ()&#123;</span><br><span class="line">    const todos = this.todos;</span><br><span class="line">    for(let i=0;i&lt;todos.length;i++)&#123;</span><br><span class="line">        if(todos[i].done)&#123;</span><br><span class="line">            todos.splice(i,1);</span><br><span class="line">            i--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="切换所有任务项的完成状态"><a href="#切换所有任务项的完成状态" class="headerlink" title="切换所有任务项的完成状态"></a>切换所有任务项的完成状态</h2><ul>
+<li>通过事件源对象获取到 按钮 <code>toggle-all</code> 的当前选中状态</li>
+<li><p>遍历 todos ，让 todos 的状态 = <code>toggle-all</code> 的状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 目前按钮和任务项不能联动</span><br><span class="line">toggleAll (e) &#123;</span><br><span class="line">    const &#123;checked&#125; = e.target;</span><br><span class="line">    this.todos.forEach(item =&gt; item.done = checked)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>简单的做法：通过计算属性来处理</p>
+<ul>
+<li>计算属性非一般属性，本身不存储任何值，它的值来自于它自己的 get 方法的返回值</li>
+</ul>
+</li>
+<li>计算属性的完整写法：<br>属性名: {<br>  get : function () {}, //当访问该属性的时候，会自动调用 get 方法<br>  set : function () {}  //当为属性赋值的时候，会调用 set 方法<br>}</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/02/Todos-vue/" data-id="cjfjps9zo0004p8rq3upz47uk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/02/Todos-vue/" data-id="cjfl7u04o00026wrq9ml1l0ot" class="article-share-link">Share</a>
       
       
     </footer>
@@ -209,6 +230,10 @@
       <ul>
         
           <li>
+            <a href="/2018/04/04/千百汇动画导航/">千百汇动画导航</a>
+          </li>
+        
+          <li>
             <a href="/2018/04/03/组件定义和使用/">组件定义和使用</a>
           </li>
         
@@ -222,10 +247,6 @@
         
           <li>
             <a href="/2018/03/29/个人博客搭建/">个人博客</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/29/hello-world/">Hello World</a>
           </li>
         
       </ul>
