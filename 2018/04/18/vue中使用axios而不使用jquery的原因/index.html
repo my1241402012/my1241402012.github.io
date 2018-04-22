@@ -5,19 +5,16 @@
   
 
   
-  <title>匿名自执行函数以及传递依赖项的问题 | Hexo</title>
+  <title>vue中使用axios而不使用jquery的原因 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 为什么把代码写到匿名自执行函数中 目的：防止变量命名空间污染 防止污染别的变量 防止被别的变量污染 表明这是一个独立的模块   原理：函数有作用域     12345var foo = &amp;quot;baz&amp;quot;(function (window,document)&amp;#123;    var foo = &amp;quot;bar&amp;quot;&amp;#125;)(window,document)  2">
-<meta property="og:type" content="article">
-<meta property="og:title" content="匿名自执行函数以及传递依赖项的问题">
-<meta property="og:url" content="http://yoursite.com/2018/04/04/匿名自执行函数以及传递依赖项的问题/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="vue中使用axios而不使用jquery的原因">
+<meta property="og:url" content="http://yoursite.com/2018/04/18/vue中使用axios而不使用jquery的原因/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1. 为什么把代码写到匿名自执行函数中 目的：防止变量命名空间污染 防止污染别的变量 防止被别的变量污染 表明这是一个独立的模块   原理：函数有作用域     12345var foo = &amp;quot;baz&amp;quot;(function (window,document)&amp;#123;    var foo = &amp;quot;bar&amp;quot;&amp;#125;)(window,document)  2">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-04T15:05:00.871Z">
+<meta property="og:updated_time" content="2018-04-18T12:03:27.945Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="匿名自执行函数以及传递依赖项的问题">
-<meta name="twitter:description" content="1. 为什么把代码写到匿名自执行函数中 目的：防止变量命名空间污染 防止污染别的变量 防止被别的变量污染 表明这是一个独立的模块   原理：函数有作用域     12345var foo = &amp;quot;baz&amp;quot;(function (window,document)&amp;#123;    var foo = &amp;quot;bar&amp;quot;&amp;#125;)(window,document)  2">
+<meta name="twitter:title" content="vue中使用axios而不使用jquery的原因">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,10 +61,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-匿名自执行函数以及传递依赖项的问题" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-vue中使用axios而不使用jquery的原因" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/04/04/匿名自执行函数以及传递依赖项的问题/" class="article-date">
-  <time datetime="2018-04-04T15:01:54.000Z" itemprop="datePublished">2018-04-04</time>
+    <a href="/2018/04/18/vue中使用axios而不使用jquery的原因/" class="article-date">
+  <time datetime="2018-04-18T12:03:27.000Z" itemprop="datePublished">2018-04-18</time>
 </a>
     
   </div>
@@ -78,7 +75,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      匿名自执行函数以及传递依赖项的问题
+      vue中使用axios而不使用jquery的原因
     </h1>
   
 
@@ -86,29 +83,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-为什么把代码写到匿名自执行函数中"><a href="#1-为什么把代码写到匿名自执行函数中" class="headerlink" title="1. 为什么把代码写到匿名自执行函数中"></a>1. 为什么把代码写到匿名自执行函数中</h3><ul>
-<li>目的：防止变量命名空间污染<ul>
-<li>防止污染别的变量</li>
-<li>防止被别的变量污染</li>
-<li>表明这是一个独立的模块</li>
-</ul>
-</li>
-<li>原理：函数有作用域   </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var foo = &quot;baz&quot;</span><br><span class="line"></span><br><span class="line">(function (window,document)&#123;</span><br><span class="line">    var foo = &quot;bar&quot;</span><br><span class="line">&#125;)(window,document)</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="2-为什么把window-document传递到匿名自执行函数中"><a href="#2-为什么把window-document传递到匿名自执行函数中" class="headerlink" title="2. 为什么把window,document传递到匿名自执行函数中"></a>2. 为什么把window,document传递到匿名自执行函数中</h3><ul>
-<li>告诉开发人员依赖是什么<ul>
-<li>在浏览器环境执行还是在服务器环境执行，可以一目了然</li>
-</ul>
-</li>
-<li>减少作用域查找范围（次数），提高代码执行效率</li>
-</ul>
-
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/04/匿名自执行函数以及传递依赖项的问题/" data-id="cjgatavt700026krqzxe3wlhf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/18/vue中使用axios而不使用jquery的原因/" data-id="cjgatavqv00006krqgsidpqfi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -117,19 +96,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/04/17/git常用命令/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/04/22/数据类型及转换/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          git常用命令
+          数据类型及转换
         
       </div>
     </a>
   
   
-    <a href="/2018/04/04/千百汇动画导航/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/04/17/git常用命令/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">千百汇动画导航</div>
+      <div class="article-nav-title">git常用命令</div>
     </a>
   
 </nav>

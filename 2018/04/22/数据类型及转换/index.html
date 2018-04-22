@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>数据类型及转换 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、JS中的数据类型1.基本数据类型js中的数据类型可以分为五种：number 、string 、boolean、 underfine 、null。   number:数字类型 ，整型浮点型都包括。 string：字符串类型，右数字字母字符串以及标点符号组成，必须放在单引号或者双引号中。 boolean：布尔类型，只有true和false两种值。 underfine:未定义，一般指的是已经声明，但">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据类型及转换">
+<meta property="og:url" content="http://yoursite.com/2018/04/22/数据类型及转换/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、JS中的数据类型1.基本数据类型js中的数据类型可以分为五种：number 、string 、boolean、 underfine 、null。   number:数字类型 ，整型浮点型都包括。 string：字符串类型，右数字字母字符串以及标点符号组成，必须放在单引号或者双引号中。 boolean：布尔类型，只有true和false两种值。 underfine:未定义，一般指的是已经声明，但">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-04-22T12:51:35.508Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据类型及转换">
+<meta name="twitter:description" content="一、JS中的数据类型1.基本数据类型js中的数据类型可以分为五种：number 、string 、boolean、 underfine 、null。   number:数字类型 ，整型浮点型都包括。 string：字符串类型，右数字字母字符串以及标点符号组成，必须放在单引号或者双引号中。 boolean：布尔类型，只有true和false两种值。 underfine:未定义，一般指的是已经声明，但">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-数据类型及转换" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/22/数据类型及转换/" class="article-date">
+  <time datetime="2018-04-22T11:58:10.000Z" itemprop="datePublished">2018-04-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据类型及转换
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、JS中的数据类型"><a href="#一、JS中的数据类型" class="headerlink" title="一、JS中的数据类型"></a>一、JS中的数据类型</h2><h3 id="1-基本数据类型"><a href="#1-基本数据类型" class="headerlink" title="1.基本数据类型"></a>1.基本数据类型</h3><p>js中的数据类型可以分为五种：number 、string 、boolean、 underfine 、null。</p>
+<hr>
+<ul>
+<li>number:数字类型 ，整型浮点型都包括。</li>
+<li>string：字符串类型，右数字字母字符串以及标点符号组成，必须放在单引号或者双引号中。</li>
+<li>boolean：布尔类型，只有true和false两种值。</li>
+<li>underfine:未定义，一般指的是已经声明，但是没有赋值的变量，如var a;</li>
+<li>null:空对象类型，var a = null，和var a=””有区别;<ul>
+<li>预解析—变量提升</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-复杂数据类型"><a href="#2-复杂数据类型" class="headerlink" title="2.复杂数据类型"></a>2.复杂数据类型</h3><ul>
+<li>object：对象，对象就是把一些彼此相关的属性和方法集合在一起构成的一个数据实体。<ul>
+<li>在js常见的有window, document, array等。</li>
+</ul>
+</li>
+<li>NaN：他表示的是数字类型的特殊值，可以理解为Number的一种特殊类型，只有当在js运算中发生数据类型转换时提示。<ul>
+<li>isNaN()方法是特有的对数据进行判断的 ，如果是数字返回false，不是数字返回true。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="二、JS中的数据类型的转换"><a href="#二、JS中的数据类型的转换" class="headerlink" title="二、JS中的数据类型的转换"></a>二、JS中的数据类型的转换</h2><p> 在js中数据类型转换一般分为两种，即强制类型转换和隐式类型转换(利用js弱变量类型转换)。</p>
+<h4 id="1-强制转换"><a href="#1-强制转换" class="headerlink" title="1.强制转换"></a>1.强制转换</h4><ul>
+<li><p>利用js提供的函数parseInt() , parseFloat() , Number(), Boolean(), String()进行数据转换。</p>
+<ul>
+<li><p>顾名思义，前两个分别是对数据进行解析转换，前者是整数，后者是浮点数。</p>
+<p><strong>他们解析的原则是从前往后进行解析，尽其所能。</strong></p>
+</li>
+<li><p>若存在有能识别的数字就解析，如果第一位就不是数字则返回NaN.</p>
+</li>
+<li><p>Number则是对整体进行判断，是数字返回数字，否则NaN.</p>
+</li>
+<li><p>Boolean() 则是对是否存在和真假进行判断进行判断。</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5 id="（1）parseInt"><a href="#（1）parseInt" class="headerlink" title="（1）parseInt():"></a>（1）parseInt():</h5><ul>
+<li>parseInt() 方法还有<strong><code>基模式</code></strong>，可以把二进制、八进制、十六进制或其他任何进制的字符串转换成整数。</li>
+<li>基是由    parseInt() 方法的第二个参数指定的，所以要解析十六进制的值，对于含有前导的数则直接进行解析需如下调用：</li>
+</ul>
+<p>​    parseInt(“AA”,16);//170</p>
+<p>​        parseInt(“10”,2);//2</p>
+<p>​        parseInt(“10”,8);//8</p>
+<h5 id="（2）ParseFloat"><a href="#（2）ParseFloat" class="headerlink" title="（2）ParseFloat():"></a>（2）ParseFloat():</h5><p>​    parseFloat(“12.35元”)//12.35</p>
+<p>​        parseFloat(“12.23.122”);//12.23</p>
+<p>​        parseFloat(“av”);//NaN</p>
+<h5 id="（3）Number"><a href="#（3）Number" class="headerlink" title="（3）Number():"></a>（3）Number():</h5><p>​    alert(12.3元);//false</p>
+<p>​        Number(true);//1</p>
+<p>​        Number(“12.3.4”);//NaN</p>
+<p>​        Number(“ “);//0</p>
+<h5 id="（4）Boolean"><a href="#（4）Boolean" class="headerlink" title="（4）Boolean():"></a>（4）Boolean():</h5><ul>
+<li><p>他不会对引号里面的数字进行自动进行转换。</p>
+<p>Boolean([])//true</p>
+<p>Boolean(“0”);//true</p>
+<p>Boolean(null)//false</p>
+</li>
+</ul>
+<h5 id="（5）-String"><a href="#（5）-String" class="headerlink" title="（5） String():"></a>（5） String():</h5><ul>
+<li><p>String() 则是传入的所有数据类型转换为字符串。</p>
+</li>
+<li><p>和toString()方法的区别是</p>
+<p>typeof String(null)//String</p>
+<p>typeof String(undefined)//String</p>
+</li>
+</ul>
+<hr>
+<h4 id="2-强制转换"><a href="#2-强制转换" class="headerlink" title="2.强制转换"></a>2.强制转换</h4><ul>
+<li>js是弱类型的脚本语言，语法相对与java等高级编程语言来说不够严格，隐式类型转换和java中大不相同。</li>
+<li>这里的隐式类型转换指的是<strong><code>字符串和数值类型</code></strong>之间的转换。<ul>
+<li>在进行字符串和数字之间进行减乘除取模运算或者进行比较运算时，他会自动把字符串转换为数字。转换数字的默认方法是调用Number().</li>
+<li>进行加法运算则是将数字看成字符串进行拼接。</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/22/数据类型及转换/" data-id="cjgatavta00036krqvst7y6ks" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/04/18/vue中使用axios而不使用jquery的原因/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vue中使用axios而不使用jquery的原因</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/04/22/数据类型及转换/">数据类型及转换</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/18/vue中使用axios而不使用jquery的原因/">vue中使用axios而不使用jquery的原因</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/17/git常用命令/">git常用命令</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/04/匿名自执行函数以及传递依赖项的问题/">匿名自执行函数以及传递依赖项的问题</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/04/千百汇动画导航/">千百汇动画导航</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
