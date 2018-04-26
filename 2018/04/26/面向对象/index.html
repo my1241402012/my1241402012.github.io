@@ -5,16 +5,21 @@
   
 
   
-  <title>React基本语法 | Hexo</title>
+  <title>面向对象 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="React基本语法">
-<meta property="og:url" content="http://yoursite.com/2018/04/25/React基本语法/index.html">
+  <meta name="description" content="面向对象总结一、函数的三个身份：  普通函数，可以在固定的位置执行固定的代码 this 指向window      可以被当做构造函数去构造一个实例 this 指向实例对象      它本身是一个对象 —对象就是键值对的集合    key: value       Function是一个JS内置的构造函数，本身是一个对象，所有也有__proto__属性，指向Function.prototype，F">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象">
+<meta property="og:url" content="http://yoursite.com/2018/04/26/面向对象/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="面向对象总结一、函数的三个身份：  普通函数，可以在固定的位置执行固定的代码 this 指向window      可以被当做构造函数去构造一个实例 this 指向实例对象      它本身是一个对象 —对象就是键值对的集合    key: value       Function是一个JS内置的构造函数，本身是一个对象，所有也有__proto__属性，指向Function.prototype，F">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-25T08:41:36.823Z">
+<meta property="og:image" content="c:/Users/hanshow/Desktop/完整的原型链结构.png">
+<meta property="og:updated_time" content="2018-04-26T03:26:21.132Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React基本语法">
+<meta name="twitter:title" content="面向对象">
+<meta name="twitter:description" content="面向对象总结一、函数的三个身份：  普通函数，可以在固定的位置执行固定的代码 this 指向window      可以被当做构造函数去构造一个实例 this 指向实例对象      它本身是一个对象 —对象就是键值对的集合    key: value       Function是一个JS内置的构造函数，本身是一个对象，所有也有__proto__属性，指向Function.prototype，F">
+<meta name="twitter:image" content="c:/Users/hanshow/Desktop/完整的原型链结构.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -61,10 +66,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-React基本语法" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-面向对象" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/04/25/React基本语法/" class="article-date">
-  <time datetime="2018-04-25T08:41:36.000Z" itemprop="datePublished">2018-04-25</time>
+    <a href="/2018/04/26/面向对象/" class="article-date">
+  <time datetime="2018-04-26T02:03:40.000Z" itemprop="datePublished">2018-04-26</time>
 </a>
     
   </div>
@@ -75,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      React基本语法
+      面向对象
     </h1>
   
 
@@ -83,11 +88,42 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="面向对象总结"><a href="#面向对象总结" class="headerlink" title="面向对象总结"></a>面向对象总结</h2><h3 id="一、函数的三个身份："><a href="#一、函数的三个身份：" class="headerlink" title="一、函数的三个身份："></a>一、函数的三个身份：</h3><ul>
+<li><ol>
+<li>普通函数，可以在固定的位置执行固定的代码<ul>
+<li>this 指向window</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>可以被当做构造函数去构造一个实例<ul>
+<li>this 指向实例对象</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol start="3">
+<li><p>它本身是一个对象</p>
+<p>—对象就是键值对的集合    key: value</p>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<ul>
+<li>Function是一个JS内置的构造函数，本身是一个对象，所有也有<code>__proto__</code>属性，指向Function.prototype，Function.prototype的<code>__proto__</code>指向了Object.prototype。</li>
+</ul>
+<hr>
+<h2 id="二、面向对象"><a href="#二、面向对象" class="headerlink" title="二、面向对象"></a>二、面向对象</h2><h4 id="特点：高内聚低耦合"><a href="#特点：高内聚低耦合" class="headerlink" title="*特点：高内聚低耦合"></a>*特点：高内聚低耦合</h4><p>*复杂数据类型的赋值</p>
+<p>*对象的属性和方法</p>
+<hr>
+<h2 id="三、完整的原型链结构"><a href="#三、完整的原型链结构" class="headerlink" title="三、完整的原型链结构"></a>三、完整的原型链结构</h2><p><img src="C:\Users\hanshow\Desktop\完整的原型链结构.png" alt="完整的原型链结构"></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/25/React基本语法/" data-id="cjgfyv7vv0000pcrq7a3um8ka" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/26/面向对象/" data-id="cjgfyv7wn0006pcrq1e4imu6o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -96,19 +132,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/04/26/面向对象/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          面向对象
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/04/25/react中的表单处理/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/04/25/React基本语法/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">react中的表单处理</div>
+      <div class="article-nav-title">React基本语法</div>
     </a>
   
 </nav>
